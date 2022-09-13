@@ -1,7 +1,8 @@
 module LastDigit (lastDigit) where
 -- Last digit of a huge number
 
-lastDigit :: [Integer] -> Integer
+lastDigit :: [Integer] -- ^ 
+  -> Integer
 lastDigit [] = 1
 lastDigit as = getLastDigit $ numLardg as
 
