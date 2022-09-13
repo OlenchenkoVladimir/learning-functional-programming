@@ -1,14 +1,13 @@
 module LastDigit (lastDigit) where
 -- Last digit of a huge number
 
-
 lastDigit :: [Integer] -> Integer
 lastDigit [] = 1
 lastDigit as = getLastDigit $ numLardg as
 
 numLardg :: Integral b => [b] -> b
 numLardg  = foldr (^) 1
- 
+
 getLastDigit :: Integer -> Integer
 getLastDigit num
     | num < 0 = ((-1) * num) `rem` 10
