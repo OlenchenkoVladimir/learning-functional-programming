@@ -3,7 +3,33 @@ module LastDigit (lastDigit) where
 
 
 lastDigit :: [Integer] -> Integer
-lastDigit as = undefined
+lastDigit [] = 1
+lastDigit as = getLastDigit $ numLardg as
+
+numLardg :: Integral b => [b] -> b
+numLardg  = foldr (^) 1
+ 
+getLastDigit :: Integer -> Integer
+getLastDigit num
+    | num < 0 = ((-1) * num) `rem` 10
+    | otherwise = num `rem` 10
+
+{-
+Test Results:
+Execution Timed Out
+STDERR
+Execution Timed Out (12000 ms)
+Why did my code time out?
+Our servers are configured to only allow a certain amount of time 
+for your code to execute. 
+In rare cases the server may be taking on too much work 
+and simply wasn't able to run your code efficiently enough. 
+Most of the time though this issue is 
+caused by inefficient algorithms. 
+If you see this error multiple times you should 
+try to optimize your code further.
+-}
+
 
 {-
 
