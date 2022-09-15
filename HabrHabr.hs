@@ -1,4 +1,9 @@
+{-# LANGUAGE FlexibleContexts #-}
 module HabrHabr where
+import Data.List (foldl')
+import qualified GHC.Types
+
+import Prelude hiding (Traversable)
 
 solve :: Int -> Int -> Int
 solve 0 _ = 0
@@ -23,3 +28,10 @@ main :: IO ()
 main = do
      nStr <- getLine
      printNSolutions  (read nStr :: Int)
+
+
+pw :: (Num a, Integral a) => [a] -> a
+pw = foldl' (flip (^)) 1 . reverse
+
+p :: (Integral b, Num a) => a -> b -> a
+p x y = x ^ y 
